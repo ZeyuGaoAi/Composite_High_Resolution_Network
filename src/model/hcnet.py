@@ -487,7 +487,7 @@ class Graph(ModelDesc, Config):
                     loss_dice_2 = tf.identity(loss_dice_2, name='loss-dice-1v23')
                     add_moving_summary(loss_dice_2)
 
-                ### classification loss
+                ### final classification loss
                 coe = tf.constant([1.0,1.0,5.0,5.0,1.0])
                 one_coe = one*coe
                 loss_ce = categorical_crossentropy(soft, one)
@@ -499,17 +499,6 @@ class Graph(ModelDesc, Config):
                     loss_dice += dice_loss(soft[...,type_id], one[...,type_id]) #* coe[type_id]
                 loss_dice = tf.identity(loss_dice, name='loss-dice')
                 add_moving_summary(loss_dice)
-                
-#                 if self.uncertainty:
-#                     loss_ce = tf.reduce_sum(1/(a1*a1)*loss_ce + tf.log(a1))
-#                     loss_ce_1 = tf.reduce_sum(1/(a2*a2)*loss_ce_1 + tf.log(a2))
-#                     loss_ce_2 = tf.reduce_sum(1/(a3*a3)*loss_ce_2 + tf.log(a3))
-#                     a1_v = tf.reduce_sum(a1, name='a1')
-#                     a2_v = tf.reduce_sum(a2, name='a2')
-#                     a3_v = tf.reduce_sum(a3, name='a3')
-#                     add_moving_summary(a1_v)
-#                     add_moving_summary(a2_v)
-#                     add_moving_summary(a3_v)
                 
                 if self.mix_class:
                     if self.use_dice:
@@ -541,11 +530,6 @@ class Graph(ModelDesc, Config):
                                        one_binary[...,type_id])
                 loss_dice_b = tf.identity(loss_dice_b, name='loss-dice-binary')
                 add_moving_summary(loss_dice_b)
-                
-#                 if self.uncertainty:
-#                     loss_bce = tf.reduce_sum(1/(a4*a4)*loss_bce + tf.log(a4))
-#                     a4_v = tf.reduce_sum(a4, name='a4')
-#                     add_moving_summary(a4_v)
                 if self.use_dice:
                     loss_binary = loss_bce + loss_dice_b
                 else:
@@ -573,18 +557,5 @@ class Graph(ModelDesc, Config):
                 
 #             add_moving_summary(('.param*'))
             add_param_summary(('.*/W', ['histogram']), ('.*/param*', ['scalar']))   # monitor W
-
-            #### logging visual sthg
-#             orig_imgs = tf.cast(orig_imgs  , tf.uint8)
-#             orig_imgs = crop_op(orig_imgs, (6, 6), "channels_last")
-#             tf.summary.image('input', orig_imgs, max_outputs=1)
-    
-#             pred = colorize(prob_np[...,0], cmap='jet')
-#             true = colorize(true[...,0], cmap='jet')
-#             pen_map = colorize(pen_map, cmap='jet')
-
-#             viz = tf.concat([orig_imgs, pred, true, pen_map], 2)
-
-#             tf.summary.image('output', viz, max_outputs=1)
 
         return

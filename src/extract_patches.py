@@ -76,7 +76,6 @@ if __name__ == '__main__':
     img_dir = '/home1/gzy/NucleiSegmentation/CoNSeP/Train/Images/'
     ann_dir = '/home1/gzy/NucleiSegmentation/CoNSeP/Train/Labels/'
     map_dir = '/home1/gzy/NucleiSegmentation/CoNSeP/Train/Maps/'
-    #pre_dir = '/home1/gzy/NucleiSegmentation/CoNSeP/Train/Predicts/'
     ####
     out_dir = "/home1/gzy/NucleiSegmentation/CoNSeP/Train/%dx%d_%dx%d_pred_mask" % \
                         (win_size[0], win_size[1], step_size[0], step_size[1])
@@ -121,12 +120,12 @@ if __name__ == '__main__':
             ann_inst = (ann_inst['inst_map']).astype('int32')
             ann = np.expand_dims(ann_inst, -1)
         
-        if cfg.type_boundray:
-            mask = ann_inst.copy()
-            mask[mask!=0] = 1
-            mask = draw_contours(mask, ann_inst)
-            mask = np.expand_dims(mask, -1)
-            ann = np.concatenate([ann, mask], axis=-1)
+#         if cfg.type_boundray:
+#             mask = ann_inst.copy()
+#             mask[mask!=0] = 1
+#             mask = draw_contours(mask, ann_inst)
+#             mask = np.expand_dims(mask, -1)
+#             ann = np.concatenate([ann, mask], axis=-1)
        
         #img = np.concatenate([img, ann], axis=-1)
 #         mask = ann_inst.copy()

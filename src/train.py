@@ -157,18 +157,18 @@ class StatCollector(Inferencer, Config):
                 stat_dict['%s_dice_%s' % (self.prefix, type_name)] = dice_val
             stat_dict[self.prefix + '_mean_dice'] = np.mean(type_dice_list)
                 
-        if self.type_boundray:
-            pred_bnd = np.argmax(pred_bnd, axis=-1)
+#         if self.type_boundray:
+#             pred_bnd = np.argmax(pred_bnd, axis=-1)
             
-            accuracy = (pred_bnd == true_bnd).sum() / nr_pixels
-            stat_dict[self.prefix + '_bnd_acc' ] = accuracy
+#             accuracy = (pred_bnd == true_bnd).sum() / nr_pixels
+#             stat_dict[self.prefix + '_bnd_acc' ] = accuracy
 
-            bnd_dict = {'NucleiBody':1, 'NucleiBoundary':2}
-            type_dice_list = []
-            for type_name, type_id in bnd_dict.items():
-                dice_val = _dice(true_bnd, pred_bnd, type_id)
-                type_dice_list.append(dice_val)
-                stat_dict['%s_dice_%s' % (self.prefix, type_name)] = dice_val
+#             bnd_dict = {'NucleiBody':1, 'NucleiBoundary':2}
+#             type_dice_list = []
+#             for type_name, type_id in bnd_dict.items():
+#                 dice_val = _dice(true_bnd, pred_bnd, type_id)
+#                 type_dice_list.append(dice_val)
+#                 stat_dict['%s_dice_%s' % (self.prefix, type_name)] = dice_val
 
         return stat_dict
 ####

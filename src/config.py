@@ -21,7 +21,7 @@ class Config(object):
         self.model_type = 'hcnet'
 
         
-        self.type_boundray = False # whether to predict the nuclear boundray
+#         self.type_boundray = False # whether to predict the nuclear boundray
         self.type_nuclei = True
         self.type_classification = True # whether to predict the nuclear type
         # ! must use CoNSeP dataset, where nuclear type labels are available
@@ -32,12 +32,12 @@ class Config(object):
         # ! nr_types will replace nr_classes if type_classification=True
         self.nr_classes = 2 # Nuclei Pixels vs Background
         
-        self.auxilary_tasks = False # whether to use deep supervision or auxilary tasks strategy
+#         self.auxilary_tasks = False # whether to use deep supervision or auxilary tasks strategy
         self.regression = True # whether to use np-regression branch
         self.gcb = True # whether to use attention block on encoder
-        self.uncertainty = False # whether to use uncertainty loss weight strategy
+        self.uncertainty = False # whether to use uncertainty loss weight strategy, not very useful
         self.mix_class = True # single or multiple classification branches
-        self.use_dice = False # whether to use dice loss
+        self.use_dice = False # whether to use dice loss, sometimes useful
 
         # define your nuclei type name here, please ensure it contains
         # same the amount as defined in `self.nr_types` . ID 0 is preserved
@@ -109,7 +109,7 @@ class Config(object):
         self.model_name = '%s/%s' % (exp_id, model_id)
         # loading chkpts in tensorflow, the path must not contain extra '/'
         self.log_path = './logs/' # log root path - modify according to needs
-        self.save_dir = '%s/%s_mix_final_v' % (self.log_path, self.model_name) # log file destination
+        self.save_dir = '%s/%s_test' % (self.log_path, self.model_name) # log file destination
 
         #### Info for running inference
         self.inf_auto_find_chkpt = False 
@@ -121,9 +121,7 @@ class Config(object):
         # while [Nuclei Pixels][Additional] will be used for extracting instances
 
         self.inf_imgs_ext = '.png'
-#         self.inf_data_dir = '/home1/gzy/NucleiSegmentation/CoNSeP/Test/Masks/'
         self.inf_data_dir = '/home1/gzy/NucleiSegmentation/High_CCRCC/Test/Images/'
-#         self.inf_mask_dir = '/home1/gzy/NucleiSegmentation/CoNSeP/Test/Predicts/'
         self.inf_output_dir = './output/%s/%s/' % (exp_id, model_id)
 
         # for inference during evalutaion mode i.e run by infer.py
