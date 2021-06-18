@@ -1,12 +1,10 @@
 # HoVer-Net: Simultaneous Segmentation and Classification of Nuclei in Multi-Tissue Histology Images
 
+![](framework_grading.png)
+
 A multiple branch network that performs nuclear instance segmentation and classification within a single network. The network leverages the horizontal and vertical distances of nuclear pixels to their centres of mass to separate clustered cells. A dedicated up-sampling branch is used to classify the nuclear type for each segmented instance. <br />
 
-This is an extended version of our previous work: XY-Net.  <br />
-
-[Link](https://www.sciencedirect.com/science/article/abs/pii/S1361841519301045?via%3Dihub) to Medical Image Analysis paper. 
-
-**NEWS:** We have now released an inference version of HoVer-Net with WSI-processing capability trained on ~200,000 nuclei. For further information, click [here](https://github.com/simongraham/hovernet_inference).
+[Link](https://www.sciencedirect.com/science/article/abs/pii/S1361841519301045?via%3Dihub) to MICCAI 2021 paper. 
 
 ## Set Up Environment
 
@@ -37,9 +35,9 @@ Ground truth files are in `.mat` format, refer to the README included with the d
 - `process.py` is the post processing script for obtaining the final instances. 
 - `extract_patches.py` is the patch extraction script. 
 
-## HoVer-Net
+## CHR-Net
 
-![](diagram.png)
+![](framework_grading_details.png)
 
 
 ## Citation
