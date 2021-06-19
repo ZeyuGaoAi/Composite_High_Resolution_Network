@@ -22,24 +22,9 @@ pip install -r requirements.txt
 
 ## Dataset
 
-Download the CoNSeP dataset as used in our paper from [this link](https://warwick.ac.uk/fac/sci/dcs/research/tia/data/hovernet/). <br />
-Download the Kumar, CPM-15, CPM-17 and TNBC datsets from [this link](https://drive.google.com/open?id=1l55cv3DuY-f7-JotDN7N5nbNnjbLWchK).  <br />
+Download the ccRCC grading dataset as used in our paper from [this link](https://dataset.chenli.group/home/ccrcc-grading).
 
-Ground truth files are in `.mat` format, refer to the README included with the datasets for further information. 
-
-## Repository Structure
-
-- `src/` contains executable files used to run the model. Further information on running the code can be found in the corresponding directory.
-- `loader/`contains scripts for data loading and self implemented augmentation functions.
-- `metrics/`contains evaluation code. 
-- `misc/`contains util scripts. 
-- `model/` contains scripts that define the architecture of the segmentation models. 
-- `opt/` contains scripts that define the model hyperparameters. 
-- `postproc/` contains post processing utils. 
-- `config.py` is the configuration file. Paths need to be changed accordingly.
-- `train.py` and `infer.py` are the training and inference scripts respectively.
-- `process.py` is the post processing script for obtaining the final instances. 
-- `extract_patches.py` is the patch extraction script. 
+Ground truth files are in `.mat` format, refer to the website of this dataset for further information. 
 
 ## CHR-Net
 
