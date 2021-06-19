@@ -109,7 +109,7 @@ class Config(object):
         self.model_name = '%s/%s' % (exp_id, model_id)
         # loading chkpts in tensorflow, the path must not contain extra '/'
         self.log_path = './logs/' # log root path - modify according to needs
-        self.save_dir = '%s/%s_test' % (self.log_path, self.model_name) # log file destination
+        self.save_dir = '%s/%s' % (self.log_path, self.model_name) # log file destination
 
         #### Info for running inference
         self.inf_auto_find_chkpt = False 
