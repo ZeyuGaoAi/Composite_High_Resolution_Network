@@ -48,7 +48,7 @@ Run the `Trainning.ipynb`.
 Set the `gpus`, which denotes which GPU will be used for training.
 
 Before training, set in `config.py` and `opt/other.py`:
-- path to pretrained weights ResNet34. Download the weights [here](https://drive.google.com/open?id=187C9pGjlVmlqz-PlKW1K8AYfxDONrB0n).
+- path to pretrained weights ResNet34. Download the weights [here](https://nextcloud.chenli.group/index.php/s/wgNMPLa8ZGBCAtP).
 - path to the data directories
 - path where checkpoints will be saved
 
