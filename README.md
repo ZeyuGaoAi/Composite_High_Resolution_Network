@@ -39,6 +39,17 @@ If any part of this code is used, please give appropriate citation to our paper.
 
 Install the required libraries before using this code. Please refer to `requirements.txt`
 
+## Authors
+- Zeyu Gao (betpotti@gmail.com)
+- Jiangbo Shi (shijiangbo@stu.xjtu.edu.cn)
+- Chen Li (cli@xjtu.edu.cn)
+
+## Institute
+[BioMedical Semantic Understanding Group](http://www.chenli.group/home), Xi'an Jiaotong University
+
+## Workshop in BIBM
+[AIPath](https://aipath.org/)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
