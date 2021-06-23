@@ -10,7 +10,7 @@ The network has two parts:
 
 The two HRFEs share the same backbone encoder with W-Net by a composite connection so that meaningful features for the segmentation task can be inherited for the classification task. Finally, a head-fusion block is applied to generate the predicted label of each nucleus. 
 
-[Link]() to MICCAI 2021 paper. 
+[Link](https://arxiv.org/abs/2106.10641) to MICCAI 2021 paper. 
 
 ## Set Up Environment
 
