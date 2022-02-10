@@ -43,6 +43,7 @@ Install the required libraries before using this code. Please refer to `requirem
 - Zeyu Gao (betpotti@gmail.com)
 - Jiangbo Shi (shijiangbo@stu.xjtu.edu.cn)
 - Chen Li (cli@xjtu.edu.cn)
+- Haichuan Zhang (haichuan@psu.edu) 
 
 ## Institute
 [BioMedical Semantic Understanding Group](http://www.chenli.group/home), Xi'an Jiaotong University
