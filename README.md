@@ -22,7 +22,7 @@ pip install -r requirements.txt
 
 ## Dataset
 
-Download the ccRCC grading dataset as used in our paper from [this link](https://sites.google.com/view/aipath-dataset/home/ccrcc-grading).
+Download the ccRCC grading dataset as used in our paper from [zeyugao/RCCNucSeg](https://huggingface.co/datasets/zeyugao/RCCNucSeg).
 
 Ground truth files are in `.mat` format, refer to the website of this dataset for further information. 
 
